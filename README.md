@@ -1,2 +1,2 @@
 # Bi0s
-To submit my work.
+Submit my work
