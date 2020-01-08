@@ -9,4 +9,4 @@ chall8: This one needs the ability so see each and every colour plane an image c
 chall9: This is a barcode and it's pretty simple, zbarimg gives us the desired result.
 chall10: Yet to solve.
 chall11: This challenge was a little tricky, we had to delete the unwanted bytes that was stopping the recognition of the file. As amateurs, we would correct the number at the offset that coincided with the byte-data error displayed when we see the metadata but it is the no.of bytes, as rightly mentioned and overlooked due to us being naive, that have to be removed so the image can be recognised as a jpeg image.
-Missing Heroes: The GPS coordinates are just a bluff so we go all around the world to find the flag. The numbers in the GPS coordinates were actually ASCII values. This sure was a little tricky.
+Missing Heroes: The GPS coordinates are just a bluff so we go all around the world to find the flag. The numbers in the GPS coordinates were actually ASCII values. This sure was a little tricky...
