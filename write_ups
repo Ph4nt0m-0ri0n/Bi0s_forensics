@@ -7,6 +7,6 @@ chall6: This was a little frustrating but actually easy when the solution was fo
 chall7: This was a little surprising but doing a bit of blind search, I stumbled upon stegsnow. Well, that did work in the end.
 chall8: This one needs the ability so see each and every colour plane an image can dish out. How do we do that? Stegsolve is the tool to use. 
 chall9: This is a barcode and it's pretty simple, zbarimg gives us the desired result.
-chall10: Yet to solve.
+chall10: This was quiet a complex one. Struggled for a while until i stumbled upon zsteg and voila, it is a lsb type challenge. Extract the data in using zsteg and then pipe it with strings and then copy the output to a file. Search for the flag in that file. There, you have it. Now you've learnt something new. :)
 chall11: This challenge was a little tricky, we had to delete the unwanted bytes that was stopping the recognition of the file. As amateurs, we would correct the number at the offset that coincided with the byte-data error displayed when we see the metadata but it is the no.of bytes, as rightly mentioned and overlooked due to us being naive, that have to be removed so the image can be recognised as a jpeg image.
 Missing Heroes: The GPS coordinates are just a bluff so we go all around the world to find the flag. The numbers in the GPS coordinates were actually ASCII values. This sure was a little tricky...
