@@ -1,5 +1,5 @@
 chall1: The comment in metadata gives us a string which is a base64 string which on decoding gives us the flag.
-chall2: Yet to solve.
+chall2: This was an easy one but took a lot of time due to naiveness in audio steganography, didn't realise there was an option to add a spectrogram layer and check. There it is, sitting right there mocking at me for using audacity and all the other tools to crack it while it was sonic visualiser that did the trick.
 chall3: It is a zip file so pretty obvious we should take the help of fcrackzip. Tried a dictionary attack using the trustworthy rockyou.txt and voila, it worked.
 chall4: feh gives out a lot of information in terms of what chunk of an image is corrupted. An edit to the magic number header of the png file from 99 to 89 and correcting the PNG, IHDR, IDAT and IEND chunk makes it possible to view the image and indeed, correcting the chunks gives us the image.
 chall5: Just like we use fcrackzip for a password protected zip file, pdfcrack is going to help us find the password of this pdf file. As always we'll try a dictionary attack and again, voila! We get the password which unlocks the pdf file.
