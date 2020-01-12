@@ -1,7 +1,7 @@
 # Write ups for forensics winter session.
 
 #### chall1.jpeg:
-The comment in metadata gives us a string which is a base64 string:**`Njk2ZTYzNzQ2NjdiNTc2ODM0NzQ1ZjM0NzI2NTVmNzkzMDc1MjAzMDVmMzAyMDY5NmU2NzIwMjA2\nMTc0N2Q=`**
+The comment in metadata gives us a string which is a base64 string: **`Njk2ZTYzNzQ2NjdiNTc2ODM0NzQ1ZjM0NzI2NTVmNzkzMDc1MjAzMDVmMzAyMDY5NmU2NzIwMjA2\nMTc0N2Q=`**
 
 which on decoding gives us the flag:  **`inctf{Wh4t_4re_y0u 0_0 ing  at}`**.
 
