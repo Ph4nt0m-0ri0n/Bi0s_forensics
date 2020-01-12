@@ -8,13 +8,13 @@ which on decoding gives us the flag.
 
 ### chall2: 
 
-This was an easy one but took a lot of time due to naiveness in **audio steganography**, didn't realise there was an option to add a **spectrogram layer** and check in there. You can go to the **Layer** in the menu bar or just press **Shift+G**. There it is, sitting right there mocking at me for using audacity and all the other tools to crack it while it was **sonic visualiser** that did the trick.
-##### Flag: `inctf{did_audacity_work_???}`
+This was an easy one but took a lot of time due to naiveness in **`audio steganography`**, didn't realise there was an option to add a **spectrogram layer** and check in there. You can go to the **`Layer`** in the menu bar or just press **`Shift+G`**. There it is, sitting right there mocking at me for using audacity and all the other tools to crack it while it was **`sonic visualiser`** that did the trick.
+##### Flag: **`inctf{did_audacity_work_???}`**
 
 
 ### chall3:
 
-It is a zip file so pretty obvious we should take the help of fcrackzip. Tried a dictionary attack using the trustworthy rockyou.txt and voila, we get flag.png. This cute little puppy is hiding something though. Checking the lsb shows us that there is something hidden in it. Extracting the lsb data gives us a lot of data amidst which there exists our flag.
+It is a zip file so pretty obvious we should take the help of **`fcrackzip`**. Tried a dictionary attack using the trustworthy rockyou.txt and voila, we get flag.png. This cute little puppy is hiding something though. Checking the lsb shows us that there is something hidden in it. Extracting the lsb data gives us a lot of data amidst which there exists our flag.
 ### chall4: 
 
 feh gives out a lot of information in terms of what chunk of an image is corrupted. An edit to the magic number header of the png file from 99 to 89 and correcting the PNG, IHDR, IDAT and IEND chunk makes it possible to view the image and indeed, correcting the chunks gives us the image.
