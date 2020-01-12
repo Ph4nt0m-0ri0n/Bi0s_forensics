@@ -20,7 +20,18 @@ It is a zip file so pretty obvious we should take the help of **`fcrackzip`**. T
 
 ### chall4: 
 
-feh gives out a lot of information in terms of what chunk of an image is corrupted. An edit to the magic number header of the png file from 99 to 89 and correcting the PNG, IHDR, IDAT and IEND chunk makes it possible to view the image and indeed, correcting the chunks gives us the image.
+**`feh`** gives out a lot of information in terms of what chunk of an image is corrupted.
+The magic number is tampered with:
+```
+99 50 6E 47 CD
+```
+to 
+```
+89 50 4E 47 CD
+```
+The **`IHDR`** **`IDAT`** **`IEND`** chunks are corrupt as well.
+When we run the command `feh chall4.png` the error displayed shows us what all chunks are corrupted.
+
 ### chall5:
 
 Just like we use fcrackzip for a password protected zip file, pdfcrack is going to help us find the password of this pdf file. As always we'll try a dictionary attack and again, voila! We get the password which unlocks the pdf file.
