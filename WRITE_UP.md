@@ -7,7 +7,11 @@ which on decoding gives us the flag:  **`inctf{Wh4t_4re_y0u 0_0 ing  at}`**.
 
 #### chall2: 
 
-This was an easy one but took a lot of time due to naiveness in audio steganography, didn't realise there was an option to add a spectrogram layer and check. There it is, sitting right there mocking at me for using audacity and all the other tools to crack it while it was sonic visualiser that did the trick.
+This was an easy one but took a lot of time due to naiveness in **audio steganography**, didn't realise there was an option to add a **spectrogram layer** and check in there. You can go to the **Layer** in the menu bar or just press **Shift+G**. There it is, sitting right there mocking at me for using audacity and all the other tools to crack it while it was **sonic visualiser** that did the trick.
+###### Flag:
+`inctf{did_audacity_work_???}`
+
+
 #### chall3:
 
 It is a zip file so pretty obvious we should take the help of fcrackzip. Tried a dictionary attack using the trustworthy rockyou.txt and voila, we get flag.png. This cute little puppy is hiding something though. Checking the lsb shows us that there is something hidden in it. Extracting the lsb data gives us a lot of data amidst which there exists our flag.
