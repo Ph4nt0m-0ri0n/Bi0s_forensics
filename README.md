@@ -14,7 +14,10 @@ This was an easy one but took a lot of time due to naiveness in **`audio stegano
 
 ### chall3:
 
-It is a zip file so pretty obvious we should take the help of **`fcrackzip`**. Tried a dictionary attack using the trustworthy rockyou.txt and voila, we get flag.png. This cute little puppy is hiding something though. Checking the lsb shows us that there is something hidden in it. Extracting the lsb data gives us a lot of data amidst which there exists our flag.
+It is a zip file so pretty obvious we should take the help of **`fcrackzip`**. Tried a dictionary attack using the trustworthy **`rockyou.txt`** and voila, we get **`flag.png`**. This cute little puppy is hiding something though. Checking the **`LSB`** shows us that there is something hidden in it. Extracting the **`LSB`** data gives us a lot of data amidst which there exists our flag.
+**command:** `fcrackzip -u -v -D -p chall3.zip rockyou.txt`
+##### Flag: `inctf{3ach_4nd_3v3ry_s3cre7_inf0rm4t10n_w1ll_b3_kn0wn_by_wir3shark!!!!!_:)}`
+
 ### chall4: 
 
 feh gives out a lot of information in terms of what chunk of an image is corrupted. An edit to the magic number header of the png file from 99 to 89 and correcting the PNG, IHDR, IDAT and IEND chunk makes it possible to view the image and indeed, correcting the chunks gives us the image.
