@@ -86,7 +86,8 @@ And on the pedestal these words appear:
 My name is password:Ozymandias, king of kings:
 Look on my works, ye Mighty, and despair!
 Nothing beside remains. Round the decay
-`
+`***
+
 **password:** `Ozymandias` is given. So when we are prompted the password, we type in Ozymandias when we run the following command.
 ##### Command: **`sudo stegsnow -C -p Ozymandias chall7.txt`**
 ##### Password: **`Ozymandias`**
@@ -94,7 +95,11 @@ Nothing beside remains. Round the decay
 
 ### chall8:
 
-This one needs the ability so see each and every colour plane an image can dish out. How do we do that? Stegsolve is the tool to use. 
+This one needs the ability so see each and every colour plane an image can dish out. How do we do that? **`Stegsolve`** is the tool to use. 
+
+##### Command: **`java -jar stegsolve.jar`**
+##### Flag: **`inctf{e5c29838a74ab34fa7b9d18ca1a8d07d679c8aa3} `**
+
 ### chall9:
 
 This is a barcode and it's pretty simple, zbarimg gives us the desired result.
