@@ -71,8 +71,11 @@ Just like we use **`fcrackzip`** for a password protected zip file, pdfcrack is 
 ##### Flag: **`inctf{5ddf7d70fcc387ac24660e3fff6129efd0b6e2889cd1339dd1}`**
 
 ### chall6: 
+This one is a **`steghide`** challenge. This one needs a little but of piping to be done so we can crack the passphrase.
 
-This was a little frustrating but actually easy when the solution was found. The metadata and the image structure doesn't give away much, neither does the image colour planes give us anything. So a little try using steghide and there is a little hit but we don't know the passphrase. Maybe john can help us with a little help of rockyou.txt. Eureka! We got the passphrase and the the hidden content gets written in another file which we can access and get the flag. Thanks john! :)
+##### Command: **`steghide extract -sf chall6.jpg - | john rockyou.txt`**
+##### Flag: **`inctf{this_is_4n_e4sY_!}`** 
+
 ### chall7:
 
 This was a little surprising but doing a bit of blind search, I stumbled upon stegsnow. Well, that did work in the end.
