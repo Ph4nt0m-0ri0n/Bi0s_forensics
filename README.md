@@ -109,10 +109,57 @@ This is a barcode and it's pretty simple, **`zbarimg`** gives us the desired res
 
 ### chall10:
 
-This was quiet a complex one. Struggled for a while until I stumbled upon zsteg and voila, it is a lsb type challenge. Extract the data in using zsteg and then pipe it with strings and then copy the output to a file. Search for the flag in that file. There, you have it. Now you've learnt something new. :)
+This is an **`LSB`** challenge. We'll need **`zsteg`** for this along with some tweaking the code to retrieve the flag.
+When we check the image for **`LSB`** data, we see there is random text in maybe Gibberish or Latin(Can't really tell the difference) next to it is a location which looks something like this:
+```
+imagedata           .. text: "LPS$&;JOq"
+b1,bgr,lsb,xy       .. text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis pellentesque id nibh tortor id aliquet lectus proin. Sodales ut etiam sit amet nisl purus. Consequat mauris nunc cong"
+b3,r,lsb,xy         .. text: "\"tAwc`Eb"
+b4,r,msb,xy         .. text: "W4C'W $a"
+b4,g,msb,xy         .. file: ALAN game data
+b4,b,msb,xy         .. text: "N7=\"pw[g"
+b4,rgb,msb,xy       .. text: "sA27&4WR"
+b4,bgr,msb,xy       .. text: "0q3B67$R"
+```
+and if we observe carefully, the location next the random text, it looks like the **`LSB`** data is stored at that address and all we have to do is extract it.
+
+##### Command: **`zsteg -E b1,bgr,lsb,xy chall10.png | strings | cat > flag.txt`**
+##### Flag: **`inctf{y0u_g0t_th3_fl4g_d1d_y0u_le4rn_any7hing_?}`**
+
 ### chall11:
 
 This challenge was a little tricky, we had to delete the unwanted bytes that was stopping the recognition of the file. As amateurs, we would correct the number at the offset that coincided with the byte-data error displayed when we see the metadata but it is the no.of bytes, as rightly mentioned and overlooked due to us being naive, that have to be removed so the image can be recognised as a jpeg image.
+
+```
+File Name                       : chall11.jpg
+Directory                       : .
+File Size                       : 217 kB
+File Modification Date/Time     : 2019:12:14 13:30:02+05:30
+File Access Date/Time           : 2019:12:14 13:30:18+05:30
+File Inode Change Date/Time     : 2020:01:13 18:18:28+05:30
+File Permissions                : rw-rw-r--
+Warning                         : Processing TIFF-like data after unknown 30-byte header
+Exif Byte Order                 : Little-endian (Intel, II)
+X Resolution                    : 96
+Y Resolution                    : 96
+Resolution Unit                 : inches
+Software                        : GIMP 2.10.12
+Modify Date                     : 2019:10:21 18:23:09
+Image Width                     : 256
+Image Height                    : 167
+Bits Per Sample                 : 8 8 8
+Compression                     : JPEG (old-style)
+Photometric Interpretation      : YCbCr
+Samples Per Pixel               : 3
+Thumbnail Offset                : 262
+Thumbnail Length                : 4119
+Image Size                      : 256x167
+Megapixels                      : 0.043
+
+```
+
+
+
 ### Missing Heroes:
 
 The GPS coordinates are just a bluff so we go all around the world to find the flag. The numbers in the GPS coordinates were actually ASCII values. This sure was a little tricky...
