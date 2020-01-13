@@ -102,10 +102,14 @@ This one needs the ability so see each and every colour plane an image can dish 
 
 ### chall9:
 
-This is a barcode and it's pretty simple, zbarimg gives us the desired result.
+This is a barcode and it's pretty simple, **`zbarimg`** gives us the desired result.
+
+##### Command: **`zbarimg chall9.png`**
+##### Flag: **`flag{B4r_c0de_scanned}`**
+
 ### chall10:
 
-This was quiet a complex one. Struggled for a while until i stumbled upon zsteg and voila, it is a lsb type challenge. Extract the data in using zsteg and then pipe it with strings and then copy the output to a file. Search for the flag in that file. There, you have it. Now you've learnt something new. :)
+This was quiet a complex one. Struggled for a while until I stumbled upon zsteg and voila, it is a lsb type challenge. Extract the data in using zsteg and then pipe it with strings and then copy the output to a file. Search for the flag in that file. There, you have it. Now you've learnt something new. :)
 ### chall11:
 
 This challenge was a little tricky, we had to delete the unwanted bytes that was stopping the recognition of the file. As amateurs, we would correct the number at the offset that coincided with the byte-data error displayed when we see the metadata but it is the no.of bytes, as rightly mentioned and overlooked due to us being naive, that have to be removed so the image can be recognised as a jpeg image.
