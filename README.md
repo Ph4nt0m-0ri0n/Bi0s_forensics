@@ -41,7 +41,16 @@ to
 ```
 49 48 44 52
 ```
-      
+**`IDAT`** chunk from 
+```
+49 44 61 54
+```
+to 
+```
+49 44 41 54
+```
+
+
 When we run the command `feh chall4.png` the error displayed shows us what all chunks are corrupted.
 
 ### chall5:
