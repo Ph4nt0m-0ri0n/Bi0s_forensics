@@ -4,6 +4,14 @@
 The comment in metadata gives us a string which is a **`base64`** encoded string: **`Njk2ZTYzNzQ2NjdiNTc2ODM0NzQ1ZjM0NzI2NTVmNzkzMDc1MjAzMDVmMzAyMDY5NmU2NzIwMjA2\nMTc0N2Q=`**
 
 which on decoding gives us the flag.
+We can use `ipython` to decode the `base64` encoded string which first gets converted into hex and then to string.
+`x="Njk2ZTYzNzQ2NjdiNTc2ODM0NzQ1ZjM0NzI2NTVmNzkzMDc1MjAzMDVmMzAyMDY5NmU2NzIwMjA2\nMTc0N2Q="
+x.decode("base64")
+y="696e6374667b576834745f3472655f79307520305f3020696e67202061747d"
+y.decode("hex")
+`
+
+
 ##### Flag: **`inctf{Wh4t_4re_y0u 0_0 ing  at}`**.
 
 ### chall2: 
