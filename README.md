@@ -18,14 +18,14 @@ y.decode("hex")
 
 ##### Flag: **`inctf{Wh4t_4re_y0u 0_0 ing  at}`**.
 
-### chall2: 
+### chall2.wav: 
 
 This was an easy one but took a lot of time due to naiveness in **`audio steganography`**, didn't realise there was an option to add a **spectrogram layer** and check in there. You can go to the **`Layer`** in the menu bar or just press **`Shift+G`**. There it is, sitting right there mocking at me for using audacity and all the other tools to crack it while it was **`sonic visualiser`** that did the trick.
 
 ##### Flag: **`inctf{did_audacity_work_???}`**
 
 
-### chall3:
+### chall3.zip:
 
 It is a zip file so pretty obvious we should take the help of **`fcrackzip`**. Tried a dictionary attack using the trustworthy **`rockyou.txt`** and voila, we get **`flag.png`**. This cute little puppy is hiding something though. Checking the **`LSB`** shows us that there is something hidden in it. Extracting the **`LSB`** data gives us a lot of data amidst which there exists our flag.
 
@@ -33,7 +33,7 @@ It is a zip file so pretty obvious we should take the help of **`fcrackzip`**. T
 
 ##### Flag: `inctf{3ach_4nd_3v3ry_s3cre7_inf0rm4t10n_w1ll_b3_kn0wn_by_wir3shark!!!!!_:)}`
 
-### chall4: 
+### chall4.png: 
 
 **`feh`** gives out a lot of information in terms of what chunk of an image is corrupted.
 The magic number is tampered with:
@@ -80,7 +80,7 @@ and then open the image.
 
 ##### Flag: **`inctf{correcting_all_chunks_gives_the_image}`**
 
-### chall5:
+### chall5.pdf:
 
 Just like we use **`fcrackzip`** for a password protected zip file, pdfcrack is going to help us find the password of this pdf file. As always we'll try a dictionary attack using **`rockyou.txt`** and VOILA! We get the Password which unlocks the pdf file.
 
@@ -90,7 +90,7 @@ Just like we use **`fcrackzip`** for a password protected zip file, pdfcrack is 
 
 ##### Flag: **`inctf{5ddf7d70fcc387ac24660e3fff6129efd0b6e2889cd1339dd1}`**
 
-### chall6: 
+### chall6.jpg: 
 
 This one is a **`steghide`** challenge. This one needs a little but of piping to be done so we can crack the passphrase. A **dictionary** attack using **`John-the-ripper`** and **`rockyou.txt`** and the flag will get written in a separate file.
 
@@ -98,7 +98,7 @@ This one is a **`steghide`** challenge. This one needs a little but of piping to
 
 ##### Flag: **`inctf{this_is_4n_e4sY_!}`** 
 
-### chall7:
+### chall7.txt:
 
 This was a little surprising at first but when we take a look at common steganography tools over at **https://teambi0s.gitlab.io/bi0s-wiki/forensics/Tools/** we find an interesting tool called **`stegsnow`** which basically helps us find out hidden data in a .txt file. When we read the .txt file, we see:
 
@@ -118,7 +118,7 @@ Nothing beside remains. Round the decay
 
 ##### Flag: **`inctf{snow_snow_snow_stegsnowwwww....}`**
 
-### chall8:
+### chall8.png:
 
 This one needs the ability so see each and every colour plane an image can dish out. How do we do that? **`Stegsolve`** is the tool to use. 
 
@@ -126,14 +126,14 @@ This one needs the ability so see each and every colour plane an image can dish 
 
 ##### Flag: **`inctf{e5c29838a74ab34fa7b9d18ca1a8d07d679c8aa3} `**
 
-### chall9:
+### chall9.png:
 
 This is a barcode and it's pretty simple, **`zbarimg`** gives us the desired result.
 
 ##### Command: **`zbarimg chall9.png`**
 ##### Flag: **`flag{B4r_c0de_scanned}`**
 
-### chall10:
+### chall10.png:
 
 This is an **`LSB`** challenge. We'll need **`zsteg`** for this along with some tweaking the code to retrieve the flag.
 When we check the image for **`LSB`** data, we see there is random text in maybe Gibberish or Latin(Can't really tell the difference) next to it is a location which looks something like this:
@@ -152,7 +152,7 @@ and if we observe carefully, the location next the random text, it looks like th
 ##### Command: **`zsteg -E b1,bgr,lsb,xy chall10.png | strings | cat > flag.txt`**
 ##### Flag: **`inctf{y0u_g0t_th3_fl4g_d1d_y0u_le4rn_any7hing_?}`**
 
-### chall11:
+### chall11.jpg:
 This is a challenge based on the hex values and byte values. Metadata gives us a little information
 
 ```
@@ -240,7 +240,7 @@ Megapixels                      : 0.043
 This shows out image is now recognised as **`.jpg`**
 To be sure that the image is recognised and readable by the OS, use **`feh`** 
 ##### Flag: **`inctf{C0rr3ct3d_th3_JPG_f1l3}`**
-### Missing Heroes:
+### MissingHeroes.zip:
 This is somewhat easy. We had to dig into it's metadata, we find **`GPS`** information and see what it shows:
 ```
 GPS Version ID                  : 2.3.0.0
@@ -295,4 +295,6 @@ Dec  Char                           Dec  Char     Dec  Char     Dec  Char
 
 ```
 referring to the above table and matching the values we get `105 = i` and `110 = n` so if we continue checking the **metadata**, we will get the flag.
+
+
 ##### Flag: inctf{d3f4a51}
