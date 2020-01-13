@@ -41,7 +41,7 @@ to
 ```
 49 48 44 52
 ```
-**`IDAT`** chunk from 
+**`IDAT`** chunk from:
 ```
 49 44 61 54
 ```
@@ -50,8 +50,18 @@ to
 49 44 41 54
 ```
 
+and the **`IEND`** chunk from:
 
-When we run the command `feh chall4.png` the error displayed shows us what all chunks are corrupted.
+```
+49 45 6E 44
+```
+to 
+```
+49 45 4E 44
+```
+and then open the image.
+
+##### Flag: **`inctf{correcting_all_chunks_gives_the_image}`**
 
 ### chall5:
 
