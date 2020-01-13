@@ -157,9 +157,63 @@ Image Size                      : 256x167
 Megapixels                      : 0.043
 
 ```
+if we carefully observe the warning, it gives us information that there is unknown data from the beginning to byte 30 which is causing problems for the OS to recognise the file as a **`.jpg`** image.
+All we have to do is remove the data from the beginning till byte 30.
 
+When we execute the above process and delete 31 bytes, we end up with something like:
+```
+ExifTool Version Number         : 11.65
+File Name                       : chall11.jpg
+Directory                       : .
+File Size                       : 217 kB
+File Modification Date/Time     : 2020:01:13 20:39:28+05:30
+File Access Date/Time           : 2020:01:13 20:38:46+05:30
+File Inode Change Date/Time     : 2020:01:13 20:39:28+05:30
+File Permissions                : rw-rw-r--
+Warning                         : Processing JPEG-like data after unknown 231-byte header
+JFIF Version                    : 1.01
+Resolution Unit                 : None
+X Resolution                    : 1
+Y Resolution                    : 1
+Image Width                     : 256
+Image Height                    : 167
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+Image Size                      : 256x167
+Megapixels                      : 0.043
 
+```
+This gives us information that **`.jpg`** data is starting from byte 232 so we have to delete those many bytes from the beginning. When we do this, we get somewthing like this:
+```
+ExifTool Version Number         : 11.65
+File Name                       : chall11.jpg
+Directory                       : .
+File Size                       : 217 kB
+File Modification Date/Time     : 2020:01:13 20:42:40+05:30
+File Access Date/Time           : 2020:01:13 20:42:32+05:30
+File Inode Change Date/Time     : 2020:01:13 20:42:40+05:30
+File Permissions                : rw-rw-r--
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+JFIF Version                    : 1.01
+Resolution Unit                 : None
+X Resolution                    : 1
+Y Resolution                    : 1
+Image Width                     : 256
+Image Height                    : 167
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+Image Size                      : 256x167
+Megapixels                      : 0.043
 
+```
+This shows out image is now recognised as **`.jpg`**
+To be sure that the image is recognised and readable by the OS, use **`feh`**
 ### Missing Heroes:
 
 The GPS coordinates are just a bluff so we go all around the world to find the flag. The numbers in the GPS coordinates were actually ASCII values. This sure was a little tricky...
