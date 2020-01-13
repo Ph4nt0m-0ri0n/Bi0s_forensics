@@ -30,6 +30,11 @@ to
 89 50 4E 47 CD
 ```
 The **`IHDR`** **`IDAT`** **`IEND`** chunks are corrupt as well.
+Change the IHDR chunk from 
+```
+49 48 64 52
+```
+      
 When we run the command `feh chall4.png` the error displayed shows us what all chunks are corrupted.
 
 ### chall5:
