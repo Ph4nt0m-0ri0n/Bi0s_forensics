@@ -1,7 +1,7 @@
 # Write ups for forensics winter session.
 
 ### chall1.jpeg:
-The comment in metadata gives us a string which is a base64 string: **`Njk2ZTYzNzQ2NjdiNTc2ODM0NzQ1ZjM0NzI2NTVmNzkzMDc1MjAzMDVmMzAyMDY5NmU2NzIwMjA2\nMTc0N2Q=`**
+The comment in metadata gives us a string which is a **`base64`** encoded string: **`Njk2ZTYzNzQ2NjdiNTc2ODM0NzQ1ZjM0NzI2NTVmNzkzMDc1MjAzMDVmMzAyMDY5NmU2NzIwMjA2\nMTc0N2Q=`**
 
 which on decoding gives us the flag.
 ##### Flag: **`inctf{Wh4t_4re_y0u 0_0 ing  at}`**.
@@ -65,7 +65,8 @@ and then open the image.
 
 ### chall5:
 
-Just like we use **`fcrackzip`** for a password protected zip file, pdfcrack is going to help us find the password of this pdf file. As always we'll try a dictionary attack using **`rockyou.txt`** and VOILA! Pssword which unlocks the pdf file.
+Just like we use **`fcrackzip`** for a password protected zip file, pdfcrack is going to help us find the password of this pdf file. As always we'll try a dictionary attack using **`rockyou.txt`** and VOILA! We get the Password which unlocks the pdf file.
+
 ##### command: **`fcrackzip chall5.pdf rockyou.txt`**
 ##### Password: **`852456852456`**
 ##### Flag: **`inctf{5ddf7d70fcc387ac24660e3fff6129efd0b6e2889cd1339dd1}`**
@@ -78,7 +79,19 @@ This one is a **`steghide`** challenge. This one needs a little but of piping to
 
 ### chall7:
 
-This was a little surprising but doing a bit of blind search, I stumbled upon stegsnow. Well, that did work in the end.
+This was a little surprising at first but when we take a look at common steganography tools over at **https://teambi0s.gitlab.io/bi0s-wiki/forensics/Tools/** we find an interesting tool called **`stegsnow`** which basically helps us find out hidden data in a .txt file. When we read the .txt file, we see:
+***`
+The hand that mocked them, and the heart that fed:
+And on the pedestal these words appear:
+My name is password:Ozymandias, king of kings:
+Look on my works, ye Mighty, and despair!
+Nothing beside remains. Round the decay
+`
+**password:** `Ozymandias` is given. So when we are prompted the password, we type in Ozymandias when we run the following command.
+##### Command: **`sudo stegsnow -C -p Ozymandias chall7.txt`**
+##### Password: **`Ozymandias`**
+##### Flag: **`inctf{snow_snow_snow_stegsnowwwww....}`**
+
 ### chall8:
 
 This one needs the ability so see each and every colour plane an image can dish out. How do we do that? Stegsolve is the tool to use. 
