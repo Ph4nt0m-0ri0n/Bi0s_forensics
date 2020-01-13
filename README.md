@@ -11,8 +11,7 @@ x.decode("base64")
 
 y="696e6374667b576834745f3472655f79307520305f3020696e67202061747d"
 
-y.decode("hex")
-`
+y.decode("hex")`
 
 
 ##### Flag: **`inctf{Wh4t_4re_y0u 0_0 ing  at}`**.
