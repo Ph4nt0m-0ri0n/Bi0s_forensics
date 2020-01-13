@@ -127,8 +127,7 @@ and if we observe carefully, the location next the random text, it looks like th
 ##### Flag: **`inctf{y0u_g0t_th3_fl4g_d1d_y0u_le4rn_any7hing_?}`**
 
 ### chall11:
-
-This challenge was a little tricky, we had to delete the unwanted bytes that was stopping the recognition of the file. As amateurs, we would correct the number at the offset that coincided with the byte-data error displayed when we see the metadata but it is the no.of bytes, as rightly mentioned and overlooked due to us being naive, that have to be removed so the image can be recognised as a jpeg image.
+This is a challenge based on the hex values and byte values. Metadata gives us a little information
 
 ```
 File Name                       : chall11.jpg
@@ -213,7 +212,8 @@ Megapixels                      : 0.043
 
 ```
 This shows out image is now recognised as **`.jpg`**
-To be sure that the image is recognised and readable by the OS, use **`feh`**
+To be sure that the image is recognised and readable by the OS, use **`feh`** 
+##### Flag: **`inctf{C0rr3ct3d_th3_JPG_f1l3}`**
 ### Missing Heroes:
 
 The GPS coordinates are just a bluff so we go all around the world to find the flag. The numbers in the GPS coordinates were actually ASCII values. This sure was a little tricky...
