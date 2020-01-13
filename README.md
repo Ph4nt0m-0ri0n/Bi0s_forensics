@@ -34,7 +34,11 @@ When we run the command `feh chall4.png` the error displayed shows us what all c
 
 ### chall5:
 
-Just like we use fcrackzip for a password protected zip file, pdfcrack is going to help us find the password of this pdf file. As always we'll try a dictionary attack and again, voila! We get the password which unlocks the pdf file.
+Just like we use **`fcrackzip`** for a password protected zip file, pdfcrack is going to help us find the password of this pdf file. As always we'll try a dictionary attack using **`rockyou.txt`** and VOILA! Pssword which unlocks the pdf file.
+##### command: **`fcrackzip chall5.pdf rockyou.txt`**
+##### Password: **`852456852456`**
+##### Flag: **`inctf{5ddf7d70fcc387ac24660e3fff6129efd0b6e2889cd1339dd1}`**
+
 ### chall6: 
 
 This was a little frustrating but actually easy when the solution was found. The metadata and the image structure doesn't give away much, neither does the image colour planes give us anything. So a little try using steghide and there is a little hit but we don't know the passphrase. Maybe john can help us with a little help of rockyou.txt. Eureka! We got the passphrase and the the hidden content gets written in another file which we can access and get the flag. Thanks john! :)
