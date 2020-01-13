@@ -71,9 +71,9 @@ Just like we use **`fcrackzip`** for a password protected zip file, pdfcrack is 
 ##### Flag: **`inctf{5ddf7d70fcc387ac24660e3fff6129efd0b6e2889cd1339dd1}`**
 
 ### chall6: 
-This one is a **`steghide`** challenge. This one needs a little but of piping to be done so we can crack the passphrase.
+This one is a **`steghide`** challenge. This one needs a little but of piping to be done so we can crack the passphrase. A **dictionary** attack using **`John-the-ripper`** and **`rockyou.txt`** and the flag will get written in a separate file.
 
-##### Command: **`steghide extract -sf chall6.jpg - | john rockyou.txt`**
+##### Command: **`steghide extract -sf chall6.jpg | john rockyou.txt;`**
 ##### Flag: **`inctf{this_is_4n_e4sY_!}`** 
 
 ### chall7:
